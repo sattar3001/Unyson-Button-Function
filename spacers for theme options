@@ -1,0 +1,32 @@
+<?php 
+
+
+
+
+
+/* * ******************************************************** */
+/* spacers for theme options */
+/* * ******************************************************** */
+if (!function_exists('excite_get_separators')) :
+
+    function excite_get_separators() {
+        $spacers = array('' => '-------------------');
+        for ($count = 0; $count < 125; $count = $count + 5) {
+            $spacers['b' . $count] = esc_html__('Height', 'excite') . ': ' . $count . ' (' . esc_html__('px', 'excite') . ') ';
+        }
+        // Extra Class spacers
+
+        $extra_large = array(
+            'b200' => esc_html__('Height', 'excite') . ': 200 (' . esc_html__('px', 'excite') . ')',
+            'b250' => esc_html__('Height', 'excite') . ': 250 (' . esc_html__('px', 'excite') . ')',
+        );
+
+        $spacers = array_merge($spacers, $extra_large);
+
+        return $spacers;
+    }
+
+endif;
+
+
+?>
